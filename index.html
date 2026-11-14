@@ -9,7 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&family=Noto+Sans+Armenian:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -246,12 +246,19 @@
     .hero h1 {
       max-width: 610px;
       margin-top: 23px;
-      font-family: "Noto Sans Armenian", var(--sans);
+      font-family: var(--sans);
       font-size: clamp(32px, 3.6vw, 48px);
       font-weight: 500;
       letter-spacing: -.025em;
       line-height: 1.35;
       text-wrap: balance;
+    }
+
+    .hero-location {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .02em;
     }
 
     .hero-description {
@@ -1069,7 +1076,8 @@
       <div class="hero-copy">
         <div class="eyebrow">Shopify · E-commerce · Web Development</div>
 
-        <h1 lang="hy">Մուշեղ Հարությունյան</h1>
+        <h1>Mushegh Harutyunyan</h1>
+        <p class="hero-location">Armenian · Based in Yerevan, Armenia</p>
 
         <p class="hero-description">
           I customize Shopify storefronts, build tailored theme sections,
