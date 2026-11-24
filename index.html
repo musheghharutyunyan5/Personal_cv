@@ -523,7 +523,27 @@
     /* Process */
 
     .process {
-      background: var(--paper-dark);
+      --ink: #382219;
+      --muted: #5a3c2e;
+      --accent: #75442d;
+      --line: #b38d72;
+      --skill-card: #faeee1;
+      background: linear-gradient(135deg, #efdbc7, #ddbea4);
+      color: var(--ink);
+    }
+
+    .process-heading {
+      display: flex;
+      align-items: center;
+      gap: clamp(12px, 2vw, 20px);
+    }
+
+    .process-heading .process-heading-icon {
+      width: clamp(46px, 6vw, 62px);
+      height: clamp(46px, 6vw, 62px);
+      border-color: #9c6f55;
+      background: #75442d;
+      color: #faeee1;
     }
 
     .process-layout {
@@ -1199,7 +1219,12 @@
     <section class="section process" id="process" aria-labelledby="process-heading">
       <div class="container">
         <div class="section-heading reveal">
-          <h2 class="serif" id="process-heading">How I Work on Shopify Projects</h2>
+          <h2 class="serif process-heading" id="process-heading">
+            <span class="service-symbol process-heading-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M12 8v4m-7 4v-4h14v4"/></svg>
+            </span>
+            <span>Working Method</span>
+          </h2>
         </div>
 
         <div class="process-layout">
