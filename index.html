@@ -694,55 +694,62 @@
 
     /* About */
 
+    .about {
+      background: var(--paper-dark);
+    }
+
     .about-grid {
       display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 90px;
-    }
-
-    .about-side {
-      position: sticky;
-      top: 115px;
-      align-self: start;
-    }
-
-    .about-side h2 {
-      margin-top: 15px;
-      font-size: clamp(32px, 4vw, 46px); /* Reduced from clamp(40px, 5vw, 57px) */
-      line-height: 1.12;
-    }
-
-    .about-copy p {
-      margin-bottom: 20px;
-      color: var(--muted);
-      font-size: 12px; /* Reduced from 14px */
-    }
-
-    .about-copy strong {
-      color: var(--ink);
-      font-weight: 600;
-    }
-
-    .about-details {
-      display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-      margin-top: 36px;
-      padding-top: 25px;
-      border-top: 1px solid var(--line);
+      align-items: start;
+      gap: clamp(24px, 5vw, 64px);
     }
 
-    .detail-label {
-      color: var(--accent);
-      font-size: 9px; /* Reduced from 10px */
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
+    .about-intro {
+      margin-bottom: 18px;
+      color: var(--ink);
+      font-size: 1rem;
+      line-height: 1.65;
     }
 
-    .detail-value {
-      margin-top: 6px;
-      font-size: 11px; /* Reduced from 12px */
+    .about-education > h3 {
+      margin-bottom: 12px;
+      font-size: 1.25rem;
+    }
+
+    .about-list {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .about-card {
+      display: grid;
+      grid-template-columns: var(--skill-icon-size) minmax(0, 1fr);
+      align-items: center;
+      gap: 12px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--skill-card);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .about-card h3,
+    .about-card h4 {
+      font-size: inherit;
+    }
+
+    .about-card p {
+      margin-top: 3px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 760px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* Contact */
@@ -904,10 +911,6 @@
         padding-block: 64px;
       }
 
-      .about-grid {
-        gap: 45px;
-      }
-
       .contact-grid {
         gap: 35px;
       }
@@ -1012,23 +1015,6 @@
         align-self: start;
       }
 
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
-      .about-side {
-        position: static;
-      }
-
-      .about-side h2 {
-        font-size: 37px; /* Reduced from 46px */
-      }
-
-      .about-details {
-        gap: 20px 12px;
-      }
-
       .contact-grid {
         grid-template-columns: 1fr;
         gap: 38px;
@@ -1050,9 +1036,9 @@
   <header class="header">
     <nav class="nav container" aria-label="Main navigation">
       <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
         <a href="#shopify">Shopify</a>
         <a href="#skills">Other Skills</a>
-        <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </div>
 
@@ -1097,6 +1083,75 @@
             src="images/Warm%20Workspace%20Portrait.png"
             alt="Portrait of Mushegh Harutyunyan"
           >
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+
+    <section class="section about" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="section-heading reveal">
+          <h2 class="serif" id="about-heading">About Me</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-profile reveal">
+            <p class="about-intro">I build and customize Shopify storefronts, from theme updates to features tailored to each store. My background in IT operations and business processes helps me clarify requirements, troubleshoot issues, and deliver changes that are easy to maintain.</p>
+            <ul class="about-list" role="list">
+              <li class="about-card">
+                <span class="service-symbol service-symbol--mint" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false"><path d="M4 9h16l-1 12H5L4 9Zm4 0V7a4 4 0 0 1 8 0v2"/></svg>
+                  </span>
+                <div>
+                  <h3>Primary focus</h3>
+                  <p>Shopify and e-commerce</p>
+                </div>
+              </li>
+              <li class="about-card">
+                <span class="service-symbol service-symbol--sky" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-2-15-4 18"/></svg>
+                  </span>
+                <div>
+                  <h3>Technical tools</h3>
+                  <p>Liquid, HTML, CSS, and JavaScript</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="about-education reveal">
+            <h3>Education</h3>
+            <ul class="about-list" role="list">
+              <li class="about-card">
+                <span class="service-symbol service-symbol--amber" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false"><path d="m2 9 10-5 10 5-10 5-10-5Zm5 3v5c3 3 7 3 10 0v-5m5-3v7"/></svg>
+                  </span>
+                <div>
+                  <h4>EUA</h4>
+                  <p>Bachelor’s degree in IT &amp; Technologies</p>
+                </div>
+              </li>
+              <li class="about-card">
+                <span class="service-symbol service-symbol--mint" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false"><path d="M4 6h16l2 5H2l2-5Zm0 5v9h16v-9m-10 9v-5h4v5"/></svg>
+                  </span>
+                <div>
+                  <h4>Success Academy</h4>
+                  <p>E-Commerce Specialist, Shopify Development</p>
+                </div>
+              </li>
+              <li class="about-card">
+                <span class="service-symbol service-symbol--violet" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/></svg>
+                  </span>
+                <div>
+                  <h4>GEEKLAB</h4>
+                  <p>Web programming and database management</p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -1377,54 +1432,6 @@
             <h3>Data & Analytical Tools</h3>
             <p>Foundational Python, pandas, and data analysis learning.</p>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-
-    <section class="section" id="about">
-      <div class="container about-grid">
-        <div class="about-side reveal">
-          <div class="eyebrow">05 / About</div>
-          <h2 class="serif">Technical thinking. Practical execution.</h2>
-        </div>
-
-        <div class="about-copy reveal">
-          <p>
-            My professional interests connect <strong>technology, business,
-            and digital implementation</strong>. I enjoy working on practical
-            problems where technical details and the overall user experience matter.
-          </p>
-
-          <p>
-            My Shopify work focuses on storefront customization and the
-            implementation of useful, brand-specific features. My wider
-            background in IT operations and business processes also informs
-            how I approach requirements, troubleshooting, and delivery.
-          </p>
-
-          <div class="about-details">
-            <div>
-              <div class="detail-label">Primary focus</div>
-              <div class="detail-value">Shopify & E-commerce</div>
-            </div>
-
-            <div>
-              <div class="detail-label">Technical tools</div>
-              <div class="detail-value">Liquid, HTML, CSS, JavaScript</div>
-            </div>
-
-            <div>
-              <div class="detail-label">Approach</div>
-              <div class="detail-value">Structured & detail-oriented</div>
-            </div>
-
-            <div>
-              <div class="detail-label">Collaboration</div>
-              <div class="detail-value">Client projects & custom solutions</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
