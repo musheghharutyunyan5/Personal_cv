@@ -20,6 +20,9 @@
       --accent: #e6b78e;
       --line: #775342;
       --surface: #38241b;
+      --skill-card: #513529;
+      --skill-card-hover: #5b3d2e;
+      --skill-icon-size: 42px;
       --serif: "Playfair Display", Georgia, serif;
       --sans: "DM Sans", Arial, sans-serif;
       --container: 1160px;
@@ -323,13 +326,13 @@
       padding: 16px 18px;
       border: 1px solid var(--line);
       border-radius: 10px;
-      background: var(--paper);
+      background: var(--skill-card);
       box-shadow: 0 3px 12px rgba(41, 39, 32, .025);
       transition: background .25s, border-color .25s, box-shadow .25s;
     }
 
     .service-card:hover {
-      background: var(--surface);
+      background: var(--skill-card-hover);
       border-color: var(--accent);
       box-shadow: 0 8px 24px rgba(41, 39, 32, .07);
     }
@@ -355,8 +358,8 @@
     .service-symbol {
       display: grid;
       flex-shrink: 0;
-      width: 36px;
-      height: 36px;
+      width: var(--skill-icon-size);
+      height: var(--skill-icon-size);
       place-items: center;
       border: 1px solid var(--line);
       border-radius: 10px;
@@ -364,9 +367,59 @@
       color: var(--accent);
     }
 
+    .service-symbol--shopify {
+      color: #b4d77b;
+      background: #28321e;
+    }
+
+    .service-symbol--blue {
+      color: #9dcaff;
+      background: #263754;
+    }
+
+    .service-symbol--amber {
+      color: #ffd18f;
+      background: #49311c;
+    }
+
+    .service-symbol--mint {
+      color: #9fe2b5;
+      background: #243e31;
+    }
+
+    .service-symbol--sky {
+      color: #91dce7;
+      background: #203d46;
+    }
+
+    .service-symbol--rose {
+      color: #ffb8c9;
+      background: #4a2a39;
+    }
+
+    .service-symbol--violet {
+      color: #cdb9ff;
+      background: #382c4f;
+    }
+
+    .service-symbol--gold {
+      color: #f4da8b;
+      background: #423719;
+    }
+
+    .service-symbol--teal {
+      color: #91e1cf;
+      background: #234038;
+    }
+
+    .service-symbol--peach {
+      color: #ffb890;
+      background: #4b2d23;
+    }
+
     .service-symbol svg {
-      width: 24px;
-      height: 24px;
+      width: 28px;
+      height: 28px;
       fill: none;
       stroke: currentColor;
       stroke-width: 1.6;
@@ -570,11 +623,14 @@
 
     .skill-row {
       display: grid;
-      grid-template-columns: 36px minmax(0, 1fr) minmax(0, 1.1fr);
+      grid-template-columns: var(--skill-icon-size) minmax(0, 1fr) minmax(0, 1.1fr);
       align-items: center;
       gap: 20px;
-      padding: 17px 0;
-      border-bottom: 1px solid var(--line);
+      margin-block: 8px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--skill-card);
     }
 
     .skill-row h3 {
@@ -906,7 +962,7 @@
       }
 
       .skill-row {
-        grid-template-columns: 36px minmax(0, 1fr);
+        grid-template-columns: var(--skill-icon-size) minmax(0, 1fr);
         gap: 4px 12px;
       }
 
@@ -1012,7 +1068,7 @@
       <div class="container">
         <div class="section-heading reveal">
           <div class="eyebrow">01 / Shopify Expertise</div>
-          <h2 class="serif">From theme adjustments to custom storefront experiences.</h2>
+          <h2 class="serif">Shopify Storefronts and E-commerce Development</h2>
           <p>
             A focused overview of the Shopify work I can implement.
             Each capability should ultimately link to a real example or demonstration.
@@ -1023,7 +1079,7 @@
           <article class="service-card reveal">
             <div class="service-top">
               <span class="service-number">01 — STRUCTURE</span>
-              <span class="service-symbol" aria-hidden="true">
+              <span class="service-symbol service-symbol--shopify" aria-hidden="true">
                 <svg class="shopify-logo" viewBox="0 308 151 172" focusable="false">
                   <path fill="#95BF47" d="M131.5 341.9c-.1-.9-.9-1.3-1.5-1.3s-13.7-1-13.7-1-9.1-9.1-10.2-10c-1-1-2.9-.7-3.7-.5-.1 0-2 .6-5.1 1.6-3.1-8.9-8.4-17-17.9-17h-.9c-2.6-3.4-6-5-8.8-5-22 0-32.6 27.5-35.9 41.5-8.6 2.7-14.7 4.5-15.4 4.8-4.8 1.5-4.9 1.6-5.5 6.1-.5 3.4-13 100.1-13 100.1l97.3 18.2L150 468c.1-.2-18.4-125.2-18.5-126.1zm-39.6-9.8c-2.4.7-5.3 1.6-8.2 2.6v-1.8c0-5.4-.7-9.8-2-13.3 5 .6 8.1 6.1 10.2 12.5zm-16.3-11.4c1.3 3.4 2.2 8.2 2.2 14.8v1c-5.4 1.7-11.1 3.4-17 5.3 3.3-12.6 9.6-18.8 14.8-21.1zm-6.4-6.2c1 0 2 .4 2.8 1-7.1 3.3-14.6 11.6-17.7 28.4-4.7 1.5-9.2 2.8-13.5 4.2 3.6-12.8 12.6-33.6 28.4-33.6z"/>
                   <path fill="#5E8E3E" d="M130 340.4c-.6 0-13.7-1-13.7-1s-9.1-9.1-10.2-10c-.4-.4-.9-.6-1.3-.6l-7.3 150.6 52.8-11.4s-18.5-125.2-18.6-126.1c-.4-.9-1.1-1.3-1.7-1.5z"/>
@@ -1046,7 +1102,7 @@
           <article class="service-card reveal">
             <div class="service-top">
               <span class="service-number">02 — DEVELOPMENT</span>
-              <span class="service-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8h20M8 12l-3 2 3 2m8-4 3 2-3 2m-3-5-2 7"/></svg></span>
+              <span class="service-symbol service-symbol--blue" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8h20M8 12l-3 2 3 2m8-4 3 2-3 2m-3-5-2 7"/></svg></span>
             </div>
             <h3>Custom Sections and Components</h3>
             <p>
@@ -1064,7 +1120,7 @@
           <article class="service-card reveal">
             <div class="service-top">
               <span class="service-number">03 — PRODUCT EXPERIENCE</span>
-              <span class="service-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="m12 3 9 5-9 5-9-5 9-5ZM3 8v9l9 5 9-5V8M12 13v9M7.5 5.5l9 5"/></svg></span>
+              <span class="service-symbol service-symbol--amber" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="m12 3 9 5-9 5-9-5 9-5ZM3 8v9l9 5 9-5V8M12 13v9M7.5 5.5l9 5"/></svg></span>
             </div>
             <h3>Product Listing &amp; Store Structure</h3>
             <p>
@@ -1081,7 +1137,7 @@
           <article class="service-card reveal">
             <div class="service-top">
               <span class="service-number">04 — RESPONSIVENESS</span>
-              <span class="service-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="2" y="3" width="15" height="12" rx="2"/><path d="M6 21h7m-3-6v6"/><rect x="15" y="9" width="7" height="13" rx="1.5"/><path d="M18 19h1"/></svg></span>
+              <span class="service-symbol service-symbol--mint" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="2" y="3" width="15" height="12" rx="2"/><path d="M6 21h7m-3-6v6"/><rect x="15" y="9" width="7" height="13" rx="1.5"/><path d="M18 19h1"/></svg></span>
             </div>
             <h3>Responsive Design and Mobile Version</h3>
             <p>
@@ -1229,7 +1285,7 @@
 
         <div class="skill-list">
           <article class="skill-row reveal">
-            <span class="service-symbol" aria-hidden="true">
+            <span class="service-symbol service-symbol--sky" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c5 5 5 13 0 18-5-5-5-13 0-18Z"/></svg>
             </span>
             <h3>Web Development</h3>
@@ -1237,7 +1293,7 @@
           </article>
 
           <article class="skill-row reveal">
-            <span class="service-symbol" aria-hidden="true">
+            <span class="service-symbol service-symbol--rose" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M7 12h7m-7 3h4"/><rect x="15" y="13" width="3" height="3" rx=".5"/></svg>
             </span>
             <h3>Landing Page Development</h3>
@@ -1245,7 +1301,7 @@
           </article>
 
           <article class="skill-row reveal">
-            <span class="service-symbol" aria-hidden="true">
+            <span class="service-symbol service-symbol--violet" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-2-15-4 18"/></svg>
             </span>
             <h3>Coding</h3>
@@ -1253,7 +1309,7 @@
           </article>
 
           <article class="skill-row reveal">
-            <span class="service-symbol" aria-hidden="true">
+            <span class="service-symbol service-symbol--gold" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><path d="M6 9v6a3 3 0 0 0 3 3h6m-3-3 3 3-3 3"/></svg>
             </span>
             <h3>Business Process Automation</h3>
@@ -1261,7 +1317,7 @@
           </article>
 
           <article class="skill-row reveal">
-            <span class="service-symbol" aria-hidden="true">
+            <span class="service-symbol service-symbol--teal" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4m-4 0h8M7 12l3-3 3 2 4-4"/></svg>
             </span>
             <h3>IT & Technical Coordination</h3>
@@ -1269,7 +1325,7 @@
           </article>
 
           <article class="skill-row reveal">
-            <span class="service-symbol" aria-hidden="true">
+            <span class="service-symbol service-symbol--peach" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false"><path d="M4 4v16h16M8 16v-3m4 3V8m4 8v-5m4 5V5"/></svg>
             </span>
             <h3>Data & Analytical Tools</h3>
