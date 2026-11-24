@@ -98,6 +98,17 @@
       line-height: 1.12;
     }
 
+    @media (min-width: 768px) {
+      .expertise .section-heading {
+        max-width: none;
+      }
+
+      .expertise .shopify-heading {
+        font-size: clamp(2rem, 4vw, 3.125rem);
+        white-space: nowrap;
+      }
+    }
+
     .section-heading p {
       max-width: 550px;
       margin-top: 18px;
@@ -1096,7 +1107,7 @@
       <div class="container">
         <div class="section-heading reveal">
           <div class="eyebrow">01 / Shopify Expertise</div>
-          <h2 class="serif">Shopify Storefronts and E-commerce Development</h2>
+          <h2 class="serif shopify-heading">Shopify Storefronts and E-commerce Development</h2>
           <p>
             A focused overview of the Shopify work I can implement.
             Each capability should ultimately link to a real example or demonstration.
