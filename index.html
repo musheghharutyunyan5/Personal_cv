@@ -570,7 +570,7 @@
 
     .skill-row {
       display: grid;
-      grid-template-columns: 1fr 1.1fr 35px;
+      grid-template-columns: 36px minmax(0, 1fr) minmax(0, 1.1fr);
       align-items: center;
       gap: 20px;
       padding: 17px 0;
@@ -586,11 +586,6 @@
     .skill-row p {
       color: var(--muted);
       font-size: 11px; /* Reduced from 12px */
-    }
-
-    .skill-arrow {
-      color: var(--accent);
-      font-size: 16px; /* Reduced from 18px */
     }
 
     /* About */
@@ -911,17 +906,18 @@
       }
 
       .skill-row {
-        grid-template-columns: 1fr 24px;
-        gap: 4px 15px;
+        grid-template-columns: 36px minmax(0, 1fr);
+        gap: 4px 12px;
       }
 
       .skill-row p {
-        grid-column: 1;
+        grid-column: 2;
       }
 
-      .skill-arrow {
-        grid-column: 2;
+      .skill-row .service-symbol {
+        grid-column: 1;
         grid-row: 1 / span 2;
+        align-self: start;
       }
 
       .about-grid {
@@ -1233,27 +1229,51 @@
 
         <div class="skill-list">
           <article class="skill-row reveal">
+            <span class="service-symbol" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c5 5 5 13 0 18-5-5-5-13 0-18Z"/></svg>
+            </span>
             <h3>Web Development</h3>
             <p>HTML, CSS, JavaScript, responsive interfaces, and basic PHP/Laravel.</p>
-            <span class="skill-arrow">↗</span>
           </article>
 
           <article class="skill-row reveal">
+            <span class="service-symbol" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M7 12h7m-7 3h4"/><rect x="15" y="13" width="3" height="3" rx=".5"/></svg>
+            </span>
+            <h3>Landing Page Development</h3>
+            <p>Responsive landing pages with clear calls to action.</p>
+          </article>
+
+          <article class="skill-row reveal">
+            <span class="service-symbol" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-2-15-4 18"/></svg>
+            </span>
+            <h3>Coding</h3>
+            <p>Custom code for storefront features and interactive web components.</p>
+          </article>
+
+          <article class="skill-row reveal">
+            <span class="service-symbol" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><path d="M6 9v6a3 3 0 0 0 3 3h6m-3-3 3 3-3 3"/></svg>
+            </span>
             <h3>Business Process Automation</h3>
             <p>Process analysis, workflow improvement, and business-system implementation.</p>
-            <span class="skill-arrow">↗</span>
           </article>
 
           <article class="skill-row reveal">
+            <span class="service-symbol" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4m-4 0h8M7 12l3-3 3 2 4-4"/></svg>
+            </span>
             <h3>IT & Technical Coordination</h3>
             <p>Requirements, technical operations, system administration, and project coordination.</p>
-            <span class="skill-arrow">↗</span>
           </article>
 
           <article class="skill-row reveal">
+            <span class="service-symbol" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M4 4v16h16M8 16v-3m4 3V8m4 8v-5m4 5V5"/></svg>
+            </span>
             <h3>Data & Analytical Tools</h3>
             <p>Foundational Python, pandas, and data analysis learning.</p>
-            <span class="skill-arrow">↗</span>
           </article>
         </div>
       </div>
