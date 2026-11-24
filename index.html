@@ -461,119 +461,62 @@
 
     /* Professional experience */
 
+    #experience .experience-company {
+      margin-top: 12px;
+      color: var(--ink);
+      font-size: 1rem;
+    }
+
     .experience-list {
-      border-top: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
     }
 
     .experience-item {
-      border-bottom: 1px solid var(--line);
-    }
-
-    .experience-summary {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto 24px;
-      align-items: center;
-      gap: 24px;
-      padding: 18px 0;
-      cursor: pointer;
-      list-style: none;
-    }
-
-    .experience-summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .experience-summary:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 4px;
+      padding: clamp(18px, 2.3vw, 28px);
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--accent);
+      border-radius: 12px;
+      background: var(--skill-card);
     }
 
     .experience-title {
-      display: block;
-      font-family: var(--serif);
-      font-size: 19px;
-      font-weight: 400;
-      letter-spacing: -.025em;
-      line-height: 1.3;
-    }
-
-    .experience-company {
-      display: block;
-      margin-top: 5px;
-      color: var(--muted);
-      font-size: 11px;
+      margin-top: 8px;
+      font-family: var(--sans);
+      font-size: clamp(1.25rem, 2.1vw, 1.5rem);
+      line-height: 1.25;
     }
 
     .experience-period {
-      color: var(--muted);
-      font-size: 10px;
-      white-space: nowrap;
-    }
-
-    .experience-icon {
       color: var(--accent);
-      font-size: 20px;
-      text-align: center;
+      font-size: .875rem;
+      font-weight: 700;
     }
 
-    .experience-icon::before {
-      content: "+";
-    }
-
-    .experience-item[data-expanded="true"] .experience-icon::before,
-    .experience-item[open]:not([data-expanded]) .experience-icon::before {
-      content: "−";
-    }
-
-    .experience-panel {
-      overflow: hidden;
-    }
-
-    .experience-content {
-      max-width: 760px;
-      padding: 0 0 20px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .experience-content ul {
-      padding-left: 18px;
-    }
-
-    .experience-content li + li {
-      margin-top: 6px;
-    }
-
-    .experience-impact,
-    .experience-confidentiality {
-      margin-top: 14px;
-    }
-
-    .experience-impact strong {
+    .experience-impact {
+      margin-block: 16px;
       color: var(--ink);
-      font-weight: 600;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.45;
     }
 
-    .experience-confidentiality {
-      font-size: 11px;
-      font-style: italic;
+    .experience-responsibilities {
+      border-top: 1px solid var(--line);
+      padding: 14px 0 0 1.15em;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.5;
     }
 
-    @media (max-width: 640px) {
-      .experience-summary {
-        grid-template-columns: minmax(0, 1fr) 24px;
-        gap: 7px 14px;
-        padding: 19px 0;
-      }
+    .experience-responsibilities li + li {
+      margin-top: 8px;
+    }
 
-      .experience-period {
-        grid-column: 1;
-        white-space: normal;
-      }
-
-      .experience-icon {
-        grid-column: 2;
-        grid-row: 1 / span 2;
+    @media (max-width: 860px) {
+      .experience-list {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1159,76 +1102,40 @@
     <section class="section experience" id="experience" aria-labelledby="experienceHeading">
       <div class="container">
         <div class="section-heading reveal">
-          <div class="eyebrow">02 / Professional Experience</div>
           <h2 class="serif" id="experienceHeading">Professional Experience</h2>
-          <p>A professional journey across financial operations, business process automation, and internal IT systems.</p>
+          <p class="experience-company"><strong>SGSH</strong> · U.S. land logistics</p>
         </div>
 
-        <div class="experience-list reveal">
-          <details class="experience-item" name="professional-experience">
-            <summary class="experience-summary">
-              <span>
-                <span class="experience-title">Process Automation Team Lead</span>
-                <span class="experience-company">SGSH — US-based Land Logistics</span>
-              </span>
-              <span class="experience-period">May 2023 – November 2023</span>
-              <span class="experience-icon" aria-hidden="true"></span>
-            </summary>
-            <div class="experience-panel">
-              <div class="experience-content">
-                <ul>
-                  <li>Led business process automation initiatives across the organization.</li>
-                  <li>Ensured stable and efficient operation of the Kissflow platform.</li>
-                  <li>Designed and implemented automated workflows for finance, logistics, and document management.</li>
-                  <li>Developed solutions for contract generation, payroll calculations, payment processing, and monthly reporting.</li>
-                </ul>
-                <p class="experience-impact"><strong>Impact:</strong> Improved operational efficiency and supported reliable daily system performance across 25+ companies.</p>
-              </div>
-            </div>
-          </details>
+        <div class="experience-list">
+          <article class="experience-item reveal">
+            <p class="experience-period">May – Nov 2023</p>
+            <h3 class="experience-title">Process Automation Team Lead</h3>
+            <p class="experience-impact">Supported reliable daily operations across 25+ companies.</p>
+            <ul class="experience-responsibilities">
+              <li>Led Kissflow automation for finance, logistics, and document management.</li>
+              <li>Built workflows for contracts, payroll, payments, and monthly reporting.</li>
+            </ul>
+          </article>
 
-          <details class="experience-item" name="professional-experience">
-            <summary class="experience-summary">
-              <span>
-                <span class="experience-title">Business Automation Specialist</span>
-                <span class="experience-company">SGSH — US-based Land Logistics</span>
-              </span>
-              <span class="experience-period">October 2022 – May 2023</span>
-              <span class="experience-icon" aria-hidden="true"></span>
-            </summary>
-            <div class="experience-panel">
-              <div class="experience-content">
-                <ul>
-                  <li>Configured and administered the Kissflow platform.</li>
-                  <li>Developed automated reports to support business operations.</li>
-                  <li>Implemented system solutions based on business requirements.</li>
-                </ul>
-                <p class="experience-impact"><strong>Impact:</strong> Improved internal process efficiency and reduced manual workload through automation.</p>
-              </div>
-            </div>
-          </details>
+          <article class="experience-item reveal">
+            <p class="experience-period">Oct 2022 – May 2023</p>
+            <h3 class="experience-title">Business Automation Specialist</h3>
+            <p class="experience-impact">Reduced manual work through automation.</p>
+            <ul class="experience-responsibilities">
+              <li>Configured and administered Kissflow to meet business requirements.</li>
+              <li>Built automated reports for business operations.</li>
+            </ul>
+          </article>
 
-          <details class="experience-item" name="professional-experience">
-            <summary class="experience-summary">
-              <span>
-                <span class="experience-title">Financial Assistant</span>
-                <span class="experience-company">SGSH — US-based Land Logistics</span>
-              </span>
-              <span class="experience-period">October 2021 – October 2022</span>
-              <span class="experience-icon" aria-hidden="true"></span>
-            </summary>
-            <div class="experience-panel">
-              <div class="experience-content">
-                <ul>
-                  <li>Verified invoices and financial data for accuracy.</li>
-                  <li>Analyzed sales data and worked with pricing agreements.</li>
-                  <li>Coordinated with brokers and business partners regarding payment processing.</li>
-                  <li>Prepared financial reports and communicated with partners in English.</li>
-                </ul>
-                <p class="experience-impact"><strong>Impact:</strong> Supported accurate financial operations and timely payment collection.</p>
-              </div>
-            </div>
-          </details>
+          <article class="experience-item reveal">
+            <p class="experience-period">Oct 2021 – Oct 2022</p>
+            <h3 class="experience-title">Financial Assistant</h3>
+            <p class="experience-impact">Helped keep financial records accurate and payments on time.</p>
+            <ul class="experience-responsibilities">
+              <li>Verified invoices and financial data, analyzed sales, and reviewed pricing agreements.</li>
+              <li>Prepared financial reports and coordinated payments with brokers and partners in English.</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
@@ -1480,54 +1387,6 @@
     } else {
       revealItems.forEach(item => item.classList.add("visible"));
     }
-
-    // Professional experience: native disclosure controls with one open at a time.
-    const experienceItems = Array.from(document.querySelectorAll(".experience-item"));
-    const experienceAnimations = new WeakMap();
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-    function setExperienceOpen(item, expanded, animate = true) {
-      const panel = item.querySelector(".experience-panel");
-      const startHeight = item.open ? panel.getBoundingClientRect().height : 0;
-      const previousAnimation = experienceAnimations.get(item);
-      if (previousAnimation) {
-        previousAnimation.cancel();
-        experienceAnimations.delete(item);
-      }
-      item.dataset.expanded = String(expanded);
-
-      if (!animate || reducedMotion.matches || !panel.animate) {
-        item.open = expanded;
-        return;
-      }
-
-      // Keep the native disclosure open until its closing animation finishes.
-      item.open = true;
-      const animation = panel.animate([
-        { height: `${startHeight}px` },
-        { height: `${expanded ? panel.scrollHeight : 0}px` }
-      ], { duration: 220, easing: "ease-in-out", fill: "both" });
-      experienceAnimations.set(item, animation);
-      animation.onfinish = () => {
-        item.open = expanded;
-        animation.cancel();
-        experienceAnimations.delete(item);
-      };
-    }
-
-    experienceItems.forEach(item => {
-      item.dataset.expanded = String(item.open);
-      item.querySelector("summary").addEventListener("click", event => {
-        event.preventDefault();
-        const expanded = item.dataset.expanded !== "true";
-        if (expanded) {
-          experienceItems.forEach(other => {
-            if (other !== item) setExperienceOpen(other, false, false);
-          });
-        }
-        setExperienceOpen(item, expanded);
-      });
-    });
 
     // Current year
     document.getElementById("year").textContent = new Date().getFullYear();
